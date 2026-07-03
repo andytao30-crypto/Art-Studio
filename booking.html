@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book a Party</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+
+
+
+
+<body style="text-align:center;">
+
+
+
+
+
+<div class="navbar">
+    <a href="home.html">Home</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">Gallery </button>
+
+        <div class="dropdown-content">
+            <a href="balloon.html">Balloons</a>
+            <a href="facepaint.html">Face Paint</a>
+            <a href="magic.html">Magic</a>
+            <a href="painting.html">Art</a>
+        </div>
+    </div>
+
+    <a href="booking.html">Book a Party</a>
+
+    <div class="dropdown">
+        <button class="dropbtn">About</button>
+
+        <div class="dropdown-content">
+            <a href="Andy.html">Andy</a>
+            <a href="About.html">Organization</a>
+        </div>
+    </div>
+</div>
+
+ <style>
+
+.hero {  
+  background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.536),
+            rgba(255, 255, 255, 0.598)
+        ),
+        url("sf.png");
+
+    background-size: cover;
+    background-position: center;
+    padding: 100px 50px;
+}
+
+
+.navbar {
+    background-color: #0f0f5fe9;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a,
+.dropbtn {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: Arial;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.navbar a:hover,
+.dropbtn:hover {
+    color: #838383da;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+     border-radius: 20px 20px;
+}
+
+.dropdown-content a {
+    color: black;
+    display: block;
+    padding: 12px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+     border-radius: 20px 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+     border-radius: 20px 20px;
+}
+
+
+
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin: 0;
+
+           
+        }
+
+
+        h1 {
+            color: #ff6600;
+            font-size: 60px;
+        }
+
+        .button {
+            background-color: #ff9900e7;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+
+
+
+
+/* Modern Flatpickr Calendar */
+
+.flatpickr-calendar {
+    font-family: Arial, sans-serif;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,.18);
+    font-size: 16px;
+}
+
+.flatpickr-months {
+    background: #00247e;
+    color: white;
+    border-radius: 18px 18px 0 0;
+}
+
+.flatpickr-current-month input.cur-year,
+.flatpickr-monthDropdown-months {
+    color: white;
+    font-weight: bold;
+}
+
+.flatpickr-weekday {
+    color: #00247e;
+    font-weight: bold;
+}
+
+.flatpickr-day {
+    border-radius: 10px;
+    transition: .25s;
+}
+
+.flatpickr-day:hover {
+    background: #ff9900bd;
+    color: white;
+}
+
+.flatpickr-day.selected {
+    background: #00247e;
+    border-color: #00247e;
+}
+
+.flatpickr-day.flatpickr-disabled {
+    background: #d9d9d9;
+    color: #a8a8a8;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.flatpickr-current-month {
+    color: white;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    fill: white;
+}
+
+
+
+/* Mobile layout */
+@media (max-width:700px){
+
+.hero{
+    padding:40px 20px;
+}
+
+h1{
+    font-size:40px;
+}
+
+input,
+select{
+    width:90%;
+    font-size:18px;
+    padding:12px;
+}
+
+.button,
+.clearButton{
+    width:90%;
+    font-size:20px;
+}
+
+.navbar{
+    flex-direction:column;
+    gap:20px;
+}
+
+}
+
+
+
+
+
+    </style>
+<div class="hero">
+
+
+
+
+
+    <h1 style="font-family: Arial; font-size: 60px;  color:#00247e">Book a Party</h1>
+
+<style>
+.clearButton {
+    background-color: rgb(157, 157, 157);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 20px;
+    border-radius: 8px;
+}
+</style>
+
+    <p style="font-family: Arial;
+    font-size: 20px; 
+    color: #272727"><b>Please fill out the reservation form below</b></p>
+
+    <p style="font-family: Arial;
+    font-size: 20px; 
+    color: #272727"><b>You will receive a email confirming your order</b></p>
+
+ <hr style="width:70%;">
+    <br>
+    <br>
+    <form id="bookingForm">
+<label for="name">Parent Name:</label><br>
+<input type="text" id="name" name="name"><br><br>
+
+<label for="gmail">Gmail:</label><br>
+<input type="email" id="gmail" name="gmail"><br><br>
+
+<label for="phonenumber">Phone Number:</label><br>
+<input type="tel" id="phonenumber" name="phonenumber"><br><br>
+
+
+
+<label for="partyDate">Party Date:</label><br>
+<input type="text" id="partyDate" name="partyDate" required>
+<script>
+document.getElementById("partyDate").min =
+    new Date().toISOString().split("T")[0];
+</script>
+<br>
+<br>
+<label for="partyTime">Start Time:</label><br>
+<input type="time" id="startTime" name="startTime">
+    <br><br>
+<label for="partyTime">End Time:</label><br>
+<input type="time" id="endTime" name="endTime">
+<br><br>
+<label for="partyPlace">Exact Location:</label><br>
+<input type="place" id="partyPlace" name="partyPlace">
+<br><br>
+<label for="partyNumber">Number of people:</label><br>
+<input type="number" id="partyNumber" name="partyNumber">
+<br><br>
+<button class="clearButton" type="reset">Clear All</button><br><br>
+
+<button type="submit" class="button">
+    Submit
+</button>
+
+    </form>
+</div>
+
+
+
+
+
+<script>
+
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxS6FCiwPaUq1KIjd0yMtzH6IiKLMTSuNvK_8Nbp9Pia7EhfwH2zktMUBMkKtdkxaW6/exec";
+
+// Load booked dates and initialize the calendar
+fetch(WEB_APP_URL)
+  .then(response => response.json())
+  .then(bookedDates => {
+
+    flatpickr("#partyDate", {
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      disable: bookedDates,
+      disableMobile: true
+    });
+
+  })
+  .catch(error => {
+    console.log("Unable to load booked dates:", error);
+
+    // Still show the calendar even if booked dates can't be loaded
+    flatpickr("#partyDate", {
+      dateFormat: "Y-m-d",
+      minDate: "today",
+      disableMobile: true
+    });
+  });
+
+// Submit the form
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const booking = {
+        parent: document.getElementById("name").value,
+        email: document.getElementById("gmail").value,
+        phone: document.getElementById("phonenumber").value,
+        date: document.getElementById("partyDate").value,
+        start: document.getElementById("startTime").value,
+        end: document.getElementById("endTime").value,
+        location: document.getElementById("partyPlace").value,
+        guests: document.getElementById("partyNumber").value
+    };
+
+    fetch(WEB_APP_URL, {
+        method: "POST",
+        body: JSON.stringify(booking)
+    })
+    .then(response => response.text())
+    .then(result => {
+
+        if(result === "Success"){
+            window.location.href = "success.html";
+        } else {
+            alert("Something went wrong. Please try again.");
+        }
+
+    })
+    .catch(error => {
+        alert("Unable to submit booking.");
+        console.log(error);
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
