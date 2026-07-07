@@ -288,10 +288,7 @@ select{
 
 <label for="partyDate">Party Date:</label><br>
 <input type="text" id="partyDate" name="partyDate" required>
-<script>
-document.getElementById("partyDate").min =
-    new Date().toISOString().split("T")[0];
-</script>
+minDate: "today"
 <br>
 <br>
 <label for="partyTime">Start Time:</label><br>
@@ -352,6 +349,85 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
 
     e.preventDefault();
 
+
+
+// Validate required fields
+if (!document.getElementById("name").value.trim()) {
+    alert("Please enter the parent's name.");
+    return;
+}
+
+if (!document.getElementById("gmail").value.trim()) {
+    alert("Please enter an email address.");
+    return;
+}
+
+if (!document.getElementById("phonenumber").value.trim()) {
+    alert("Please enter a phone number.");
+    return;
+}
+
+if (!document.getElementById("partyDate").value) {
+    alert("Please select a party date.");
+    return;
+}
+
+if (!document.getElementById("startTime").value) {
+    alert("Please select a start time.");
+    return;
+}
+
+if (!document.getElementById("endTime").value) {
+    alert("Please select an end time.");
+    return;
+}
+
+
+// Require location
+if (!document.getElementById("partyPlace").value.trim()) {
+    alert("Please enter the party location.");
+    return;
+}
+
+// Require at least 1 guest
+const guests = Number(document.getElementById("partyNumber").value);
+
+if (guests < 1) {
+    alert("Please enter at least 1 guest.");
+    return;
+}
+
+// Time validation
+const start = document.getElementById("startTime").value;
+const end = document.getElementById("endTime").value;
+
+// Earliest booking is 8:00 AM
+if (start < "08:00") {
+    alert("Bookings cannot start before 8:00 AM.");
+    return;
+}
+
+// End must be after start
+if (end <= start) {
+    alert("End time must be later than the start time.");
+    return;
+}
+
+// Minimum booking length = 1 hour
+const startMinutes =
+    Number(start.split(":")[0]) * 60 +
+    Number(start.split(":")[1]);
+
+const endMinutes =
+    Number(end.split(":")[0]) * 60 +
+    Number(end.split(":")[1]);
+
+if (endMinutes - startMinutes < 60) {
+    alert("Parties must be at least 1 hour long.");
+    return;
+}
+
+
     const booking = {
         parent: document.getElementById("name").value,
         email: document.getElementById("gmail").value,
@@ -360,7 +436,7 @@ document.getElementById("bookingForm").addEventListener("submit", function(e){
         start: document.getElementById("startTime").value,
         end: document.getElementById("endTime").value,
         location: document.getElementById("partyPlace").value,
-        guests: document.getElementById("partyNumber").value
+        guests: guests
     };
 
     fetch(WEB_APP_URL, {
